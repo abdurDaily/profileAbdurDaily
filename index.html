@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abdurDaily | Digital Designer & Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-text">abdurDaily<span class="preloader-dot">.</span></div>
+            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Cursor follower -->
+    <div class="cursor-follower"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="brand-text">abdurDaily</span><span class="brand-dot">.</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                <span class="hamburger">
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-hire">Let's Talk <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <div class="hero-badge" data-animate="fade-up">
+                            <span class="badge-pulse"></span> Available for new projects
+                        </div>
+                        <h1 class="hero-title" data-animate="fade-up" data-delay="1">
+                            I design & build<br>
+                            <span class="text-stroke">digital products</span><br>
+                            <span class="hero-title-highlight">that matter.</span>
+                        </h1>
+                        <p class="hero-desc" data-animate="fade-up" data-delay="2">
+                            Full-stack developer & designer crafting high-performance web experiences.
+                            I help startups and businesses scale through clean code and thoughtful design.
+                        </p>
+                        <div class="hero-cta" data-animate="fade-up" data-delay="3">
+                            <a href="#work" class="btn btn-black">
+                                View Projects <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                            <a href="#contact" class="btn btn-outline">
+                                Get In Touch
+                            </a>
+                        </div>
+                        <div class="hero-stats" data-animate="fade-up" data-delay="4">
+                            <div class="stat">
+                                <span class="stat-num" data-count="150">0</span><span class="stat-suffix">+</span>
+                                <span class="stat-label">Projects Done</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat">
+                                <span class="stat-num" data-count="80">0</span><span class="stat-suffix">+</span>
+                                <span class="stat-label">Happy Clients</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat">
+                                <span class="stat-num" data-count="10">0</span><span class="stat-suffix">+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="hero-visual" data-animate="fade-left">
+                        <div class="hero-image-wrapper">
+                            <div class="hero-image-box">
+                                <div class="hero-img-placeholder">
+                                    <img src="images/cover.jpg" alt="Abdur Rahman" class="hero-photo">
+                                </div>
+                                <div class="hero-image-border"></div>
+                            </div>
+                            <div class="hero-badge-card">
+                                <div class="badge-card-inner">
+                                    <span class="badge-card-number">10+</span>
+                                    <span class="badge-card-text">Years of<br>Experience</span>
+                                </div>
+                            </div>
+                            <div class="hero-float-card card-top">
+                                <i class="fas fa-award"></i>
+                                <span>Award Winning</span>
+                            </div>
+                            <div class="hero-float-card card-bottom">
+                                <div class="float-avatars">
+                                    <div class="f-avatar">A</div>
+                                    <div class="f-avatar">B</div>
+                                    <div class="f-avatar">C</div>
+                                    <div class="f-avatar f-avatar-more">+5</div>
+                                </div>
+                                <span>50+ Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span>Scroll Down</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="about-visual" data-animate="fade-right">
+                        <div class="about-img-wrapper">
+                            <div class="about-img-main">
+                                <div class="img-placeholder">
+                                    <img src="images/ABDUR_RAHMAN.png" alt="Abdur Rahman - Profile" class="about-photo">
+                                </div>
+                            </div>
+                            <div class="about-img-accent"></div>
+                        </div>
+                        <div class="about-stat-card">
+                            <div class="about-stat-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="about-stat-info">
+                                <span class="about-stat-num">15+</span>
+                                <span class="about-stat-text">Awards Won</span>
+                            </div>
+                        </div>
+                        <div class="about-exp-card">
+                            <div class="exp-ring">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" class="exp-ring-bg"/>
+                                    <circle cx="50" cy="50" r="45" class="exp-ring-fill"/>
+                                </svg>
+                                <div class="exp-ring-text">
+                                    <span>10+</span>
+                                    <small>Years</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content" data-animate="fade-left">
+                        <span class="section-label">About Me</span>
+                        <h2 class="section-title">Turning complex problems into simple, beautiful solutions.</h2>
+                        <p class="about-text">
+                            I'm a multidisciplinary designer and developer with 10+ years of experience
+                            creating digital products that users love. My approach combines clean aesthetics
+                            with robust technical implementation.
+                        </p>
+                        <p class="about-text">
+                            From early-stage startups to Fortune 500 companies, I've helped businesses
+                            across industries achieve their digital goals through strategic thinking
+                            and meticulous execution.
+                        </p>
+                        <div class="about-info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Name</span>
+                                <span class="info-value">Abdur Rahman</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Email</span>
+                                <span class="info-value">hello@abdurdaily.dev</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Location</span>
+                                <span class="info-value">San Francisco, CA</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Availability</span>
+                                <span class="info-value available">Open to work</span>
+                            </div>
+                        </div>
+                        <div class="about-skills">
+                            <div class="skill">
+                                <div class="skill-header">
+                                    <span>UI/UX Design</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-header">
+                                    <span>Frontend Development</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-header">
+                                    <span>Backend Development</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+                            </div>
+                        </div>
+                        <div class="about-cta">
+                            <a href="#contact" class="btn btn-black">
+                                Download CV <i class="fas fa-download ms-2"></i>
+                            </a>
+                            <a href="#work" class="btn btn-outline">
+                                View Work
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>UI/UX Design</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>Web Development</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>Mobile Apps</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>Brand Strategy</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>E-Commerce</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>Cloud Solutions</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>UI/UX Design</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>Web Development</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>Mobile Apps</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>Brand Strategy</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>E-Commerce</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+                <span>Cloud Solutions</span><span class="marquee-star"><i class="fas fa-star"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label center">What I Do</span>
+                <h2 class="section-title">Services built for growth</h2>
+                <p class="section-desc">Comprehensive digital solutions tailored to elevate your business and captivate your audience.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-animate="fade-up">
+                    <div class="service-top">
+                        <span class="service-number">01</span>
+                        <div class="service-icon">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>User-centered design that converts. From research to high-fidelity prototypes that delight users.</p>
+                    <ul class="service-list">
+                        <li>User Research & Testing</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Design Systems</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Start Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="1">
+                    <div class="service-top">
+                        <span class="service-number">02</span>
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Scalable, performant web applications built with modern tech stacks for maximum impact.</p>
+                    <ul class="service-list">
+                        <li>React / Next.js / Vue</li>
+                        <li>Node.js / Python / Go</li>
+                        <li>API Design & Integration</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Start Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="2">
+                    <div class="service-top">
+                        <span class="service-number">03</span>
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-screen-button"></i>
+                        </div>
+                    </div>
+                    <h3>Mobile Apps</h3>
+                    <p>Cross-platform mobile experiences for iOS and Android with native performance.</p>
+                    <ul class="service-list">
+                        <li>React Native / Flutter</li>
+                        <li>Native iOS & Android</li>
+                        <li>App Store Optimization</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Start Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="3">
+                    <div class="service-top">
+                        <span class="service-number">04</span>
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <h3>Growth Strategy</h3>
+                    <p>Data-driven strategies to scale your digital presence and maximize revenue.</p>
+                    <ul class="service-list">
+                        <li>SEO & Content Strategy</li>
+                        <li>Conversion Optimization</li>
+                        <li>Analytics & Reporting</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Start Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work/Portfolio Section -->
+    <section id="work" class="work section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label light">Selected Work</span>
+                <h2 class="section-title light">Featured projects</h2>
+            </div>
+            <div class="work-grid">
+                <div class="work-item large" data-animate="fade-up">
+                    <a href="#" class="work-link">
+                        <div class="work-image">
+                            <div class="work-img-placeholder">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="work-overlay">
+                                <div class="work-overlay-content">
+                                    <span class="work-view">View Project <i class="fas fa-arrow-up-right-from-square ms-1"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <div class="work-meta">
+                                <span class="work-category">E-Commerce</span>
+                                <span class="work-dot"></span>
+                                <span class="work-year">2025</span>
+                            </div>
+                            <h3 class="work-title">Luxe Marketplace</h3>
+                            <p class="work-desc">Premium e-commerce platform with 200% increase in conversions</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="work-item" data-animate="fade-up" data-delay="1">
+                    <a href="#" class="work-link">
+                        <div class="work-image">
+                            <div class="work-img-placeholder">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="work-overlay">
+                                <div class="work-overlay-content">
+                                    <span class="work-view">View Project <i class="fas fa-arrow-up-right-from-square ms-1"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <div class="work-meta">
+                                <span class="work-category">SaaS Dashboard</span>
+                                <span class="work-dot"></span>
+                                <span class="work-year">2025</span>
+                            </div>
+                            <h3 class="work-title">Analytics Pro</h3>
+                            <p class="work-desc">Real-time analytics dashboard serving 10K+ daily users</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="work-item" data-animate="fade-up" data-delay="2">
+                    <a href="#" class="work-link">
+                        <div class="work-image">
+                            <div class="work-img-placeholder">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="work-overlay">
+                                <div class="work-overlay-content">
+                                    <span class="work-view">View Project <i class="fas fa-arrow-up-right-from-square ms-1"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <div class="work-meta">
+                                <span class="work-category">Branding</span>
+                                <span class="work-dot"></span>
+                                <span class="work-year">2024</span>
+                            </div>
+                            <h3 class="work-title">Nova Finance</h3>
+                            <p class="work-desc">Complete brand identity for a fintech startup</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="work-item large" data-animate="fade-up" data-delay="1">
+                    <a href="#" class="work-link">
+                        <div class="work-image">
+                            <div class="work-img-placeholder">
+                                <i class="fas fa-mobile-screen"></i>
+                            </div>
+                            <div class="work-overlay">
+                                <div class="work-overlay-content">
+                                    <span class="work-view">View Project <i class="fas fa-arrow-up-right-from-square ms-1"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <div class="work-meta">
+                                <span class="work-category">Mobile App</span>
+                                <span class="work-dot"></span>
+                                <span class="work-year">2024</span>
+                            </div>
+                            <h3 class="work-title">FitTrack</h3>
+                            <p class="work-desc">Health & fitness app with 4.8 star rating on App Store</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label center">Gallery</span>
+                <h2 class="section-title">Visual showcase</h2>
+                <p class="section-desc">A collection of moments from my work and journey.</p>
+            </div>
+            <div class="gallery-filter">
+                <div class="filter-pills">
+                    <div class="pill-bg"></div>
+                    <button class="filter-pill active" data-filter="all">All Work</button>
+                    <button class="filter-pill" data-filter="ebt">My Students</button>
+                    <button class="filter-pill" data-filter="fdl">My Clients</button>
+                </div>
+                <div class="filter-count">
+                    <span id="imageCount">23</span> Photos
+                </div>
+            </div>
+            <div class="gallery-grid">
+                <!-- My Students -->
+                <div class="gallery-item tall" data-category="ebt" data-animate="fade-up">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_141609434~2.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="1">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_141609434~22.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="2">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_141609434~23.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="1">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_141609434~24.jpg.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item tall" data-category="ebt" data-animate="fade-up" data-delay="2">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_141609434~25.jpg.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="3">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_141634232.MP~2.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ebt" data-animate="fade-up">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_143049985.MP~2.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item tall" data-category="ebt" data-animate="fade-up" data-delay="1">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_143339631.NIGHT~2.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="2">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_143356808.NIGHT~2.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="3">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_143518720.NIGHT~2.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="2">
+                    <div class="gallery-img bw">
+                        <img src="images/PXL_20260908_143549891.NIGHT~2.jpg" alt="Student Training Session">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Clients -->
+                <div class="gallery-item" data-category="fdl" data-animate="fade-up">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0002~2.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item tall" data-category="fdl" data-animate="fade-up" data-delay="1">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0016~2.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="2">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0019~2.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="1">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0025~2.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="2">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0030~2.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item tall" data-category="fdl" data-animate="fade-up" data-delay="3">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0039~2.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fdl" data-animate="fade-up">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0052~3.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="1">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0055.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="2">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0056~2.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="3">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0077~3.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item tall" data-category="fdl" data-animate="fade-up" data-delay="2">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0094~2.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="3">
+                    <div class="gallery-img bw">
+                        <img src="images/IMG-20260629-WA0099~2.jpg" alt="Client Project">
+                        <div class="gallery-overlay">
+                            <span class="gallery-icon"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Gallery Image" id="lightboxImg">
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label center">Testimonials</span>
+                <h2 class="section-title">What clients say</h2>
+            </div>
+            <div class="testimonials-wrapper">
+                <div class="testimonial-card active" data-animate="fade-up">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">
+                        "abdurDaily transformed our digital presence completely. The new platform increased
+                        our leads by 200% in just three months. The technical expertise and design
+                        sensibility are truly unmatched."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SJ</div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>CEO, TechVentures</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate="fade-up" data-delay="1">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">
+                        "Working with abdurDaily was a game-changer for our startup. He delivered a world-class
+                        product on time and within budget. The ability to understand business goals
+                        and translate them into code is remarkable."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <span>Founder, InnovateLab</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate="fade-up" data-delay="2">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">
+                        "The e-commerce platform built for us has been incredible. Sales increased
+                        by 150% and our customers love the seamless experience. Highly recommended
+                        for any serious business looking to scale."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EP</div>
+                        <div class="author-info">
+                            <h4>Emily Parker</h4>
+                            <span>Director, StyleShop</span>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="test-nav-btn prev"><i class="fas fa-arrow-left"></i></button>
+                <div class="test-dots">
+                    <span class="test-dot active" data-slide="0"></span>
+                    <span class="test-dot" data-slide="1"></span>
+                    <span class="test-dot" data-slide="2"></span>
+                </div>
+                <button class="test-nav-btn next"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box" data-animate="fade-up">
+                <div class="cta-content">
+                    <h2>Have a project in mind?</h2>
+                    <p>Let's work together to create something extraordinary.</p>
+                </div>
+                <a href="#contact" class="btn btn-white">
+                    Start a Project <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label center">Get In Touch</span>
+                <h2 class="section-title">Let's build something great together.</h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <div class="contact-left" data-animate="fade-right">
+                        <p class="contact-text">
+                            Have a project in mind? I'd love to hear about it.
+                            Let's discuss how we can bring your vision to life.
+                        </p>
+                        <div class="contact-info">
+                            <a href="mailto:hello@abdurdaily.dev" class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">hello@abdurdaily.dev</span>
+                                </div>
+                            </a>
+                            <a href="tel:+1234567890" class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                                <div>
+                                    <span class="contact-label">Phone</span>
+                                    <span class="contact-value">+1 (234) 567-890</span>
+                                </div>
+                            </a>
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+                                <div>
+                                    <span class="contact-label">Location</span>
+                                    <span class="contact-value">San Francisco, CA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form-box" data-animate="fade-left">
+                        <form id="contactForm">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Full Name *</label>
+                                        <input type="text" class="form-control" placeholder="John Doe" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email Address *</label>
+                                        <input type="email" class="form-control" placeholder="john@example.com" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input type="tel" class="form-control" placeholder="+1 (234) 567-890">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Budget</label>
+                                        <select class="form-control">
+                                            <option value="">Select range</option>
+                                            <option>$5K - $10K</option>
+                                            <option>$10K - $25K</option>
+                                            <option>$25K - $50K</option>
+                                            <option>$50K+</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>Project Details *</label>
+                                        <textarea class="form-control" rows="5" placeholder="Tell me about your project..." required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-black btn-full">
+                                        Send Message <i class="fas fa-paper-plane ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="formSuccess" class="form-success d-none">
+                            <div class="success-icon"><i class="fas fa-check"></i></div>
+                            <h4>Message Sent!</h4>
+                            <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">abdurDaily<span class="brand-dot">.</span></a>
+                    <p>Crafting digital experiences that drive results.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h5>Navigation</h5>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#work">Work</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="#services">UI/UX Design</a></li>
+                            <li><a href="#services">Web Development</a></li>
+                            <li><a href="#services">Mobile Apps</a></li>
+                            <li><a href="#services">Growth Strategy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Contact</h5>
+                        <ul>
+                            <li><a href="mailto:hello@abdurdaily.dev">hello@abdurdaily.dev</a></li>
+                            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                            <li><span>San Francisco, CA</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 abdurDaily. All rights reserved.</p>
+                <p>Designed & Built with <i class="fas fa-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
