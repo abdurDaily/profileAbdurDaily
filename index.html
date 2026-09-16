@@ -11,6 +11,29 @@
 </head>
 <body>
 
+    <!-- Video Intro -->
+    <div class="video-intro" id="videoIntro">
+        <div class="video-intro-bg"></div>
+        <div class="video-intro-content">
+            <div class="intro-line intro-line-1"></div>
+            <div class="intro-line intro-line-2"></div>
+            <div class="intro-brand">
+                <span class="intro-brand-text" data-intro-text>abdurDaily</span>
+                <span class="intro-brand-dot">.</span>
+            </div>
+            <div class="intro-subtitle">Digital Designer & Developer</div>
+            <div class="intro-loader">
+                <div class="intro-loader-bar"></div>
+            </div>
+        </div>
+        <button class="intro-skip" id="introSkip">
+            Skip <i class="fas fa-arrow-right"></i>
+        </button>
+        <div class="intro-counter">
+            <span id="introCounter">0</span><span>%</span>
+        </div>
+    </div>
+
     <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-inner">
@@ -22,6 +45,11 @@
     <!-- Cursor follower -->
     <div class="cursor-follower"></div>
     <div class="cursor-dot"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-particles" id="cursorParticles"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
@@ -44,7 +72,7 @@
                     <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
                 </ul>
-                <a href="#contact" class="btn btn-hire">Let's Talk <i class="fas fa-arrow-right ms-2"></i></a>
+                <a href="#contact" class="btn btn-hire magnetic-element">Let's Talk <i class="fas fa-arrow-right ms-2"></i></a>
             </div>
         </div>
     </nav>
@@ -52,6 +80,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg-grid"></div>
+        <div class="hero-particles" id="heroParticles"></div>
         <div class="container">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-7">
@@ -60,7 +89,7 @@
                             <span class="badge-pulse"></span> Available for new projects
                         </div>
                         <h1 class="hero-title" data-animate="fade-up" data-delay="1">
-                            I design & build<br>
+                            <span class="hero-title-line">I design & build</span><br>
                             <span class="text-stroke">digital products</span><br>
                             <span class="hero-title-highlight">that matter.</span>
                         </h1>
@@ -69,26 +98,35 @@
                             I help startups and businesses scale through clean code and thoughtful design.
                         </p>
                         <div class="hero-cta" data-animate="fade-up" data-delay="3">
-                            <a href="#work" class="btn btn-black">
+                            <a href="#work" class="btn btn-black magnetic-element">
                                 View Projects <i class="fas fa-arrow-right ms-2"></i>
                             </a>
-                            <a href="#contact" class="btn btn-outline">
+                            <a href="#contact" class="btn btn-outline magnetic-element">
                                 Get In Touch
                             </a>
                         </div>
                         <div class="hero-stats" data-animate="fade-up" data-delay="4">
                             <div class="stat">
-                                <span class="stat-num" data-count="150">0</span><span class="stat-suffix">+</span>
+                                <div class="stat-num-wrap">
+                                    <span class="stat-num" data-count="150">0</span>
+                                </div>
+                                <span class="stat-suffix">+</span>
                                 <span class="stat-label">Projects Done</span>
                             </div>
                             <div class="stat-divider"></div>
                             <div class="stat">
-                                <span class="stat-num" data-count="80">0</span><span class="stat-suffix">+</span>
+                                <div class="stat-num-wrap">
+                                    <span class="stat-num" data-count="80">0</span>
+                                </div>
+                                <span class="stat-suffix">+</span>
                                 <span class="stat-label">Happy Clients</span>
                             </div>
                             <div class="stat-divider"></div>
                             <div class="stat">
-                                <span class="stat-num" data-count="10">0</span><span class="stat-suffix">+</span>
+                                <div class="stat-num-wrap">
+                                    <span class="stat-num" data-count="10">0</span>
+                                </div>
+                                <span class="stat-suffix">+</span>
                                 <span class="stat-label">Years Experience</span>
                             </div>
                         </div>
@@ -109,11 +147,11 @@
                                     <span class="badge-card-text">Years of<br>Experience</span>
                                 </div>
                             </div>
-                            <div class="hero-float-card card-top">
+                            <div class="hero-float-card card-top magnetic-element">
                                 <i class="fas fa-award"></i>
                                 <span>Award Winning</span>
                             </div>
-                            <div class="hero-float-card card-bottom">
+                            <div class="hero-float-card card-bottom magnetic-element">
                                 <div class="float-avatars">
                                     <div class="f-avatar">A</div>
                                     <div class="f-avatar">B</div>
@@ -126,9 +164,29 @@
                     </div>
                 </div>
             </div>
+            <!-- Mobile Profile Image (outside row for proper mobile layout) -->
+            <div class="hero-mobile-visual">
+                <div class="hero-mobile-img-wrap">
+                    <div class="hero-mobile-img">
+                        <img src="images/cover.jpg" alt="Abdur Rahman" class="hero-mobile-photo">
+                    </div>
+                    <div class="hero-mobile-border"></div>
+                    <div class="hero-mobile-badge">
+                        <span class="hero-mobile-badge-num">10+</span>
+                        <span class="hero-mobile-badge-text">Years Exp.</span>
+                    </div>
+                    <div class="hero-mobile-avatars">
+                        <div class="f-avatar">A</div>
+                        <div class="f-avatar">B</div>
+                        <div class="f-avatar">C</div>
+                        <div class="f-avatar f-avatar-more">+5</div>
+                        <span class="hero-mobile-reviews">50+ Reviews</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="hero-scroll">
-            <a href="#about">
+            <a href="#about" class="magnetic-element">
                 <div class="scroll-mouse">
                     <div class="scroll-wheel"></div>
                 </div>
@@ -151,7 +209,7 @@
                             </div>
                             <div class="about-img-accent"></div>
                         </div>
-                        <div class="about-stat-card">
+                        <div class="about-stat-card magnetic-element">
                             <div class="about-stat-icon"><i class="fas fa-trophy"></i></div>
                             <div class="about-stat-info">
                                 <span class="about-stat-num">15+</span>
@@ -197,7 +255,7 @@
                             </div>
                             <div class="info-item">
                                 <span class="info-label">Location</span>
-                                <span class="info-value">San Francisco, CA</span>
+                                <span class="info-value">Chawkbazar, Chittagong</span>
                             </div>
                             <div class="info-item">
                                 <span class="info-label">Availability</span>
@@ -228,10 +286,10 @@
                             </div>
                         </div>
                         <div class="about-cta">
-                            <a href="#contact" class="btn btn-black">
+                            <a href="#contact" class="btn btn-black magnetic-element">
                                 Download CV <i class="fas fa-download ms-2"></i>
                             </a>
-                            <a href="#work" class="btn btn-outline">
+                            <a href="#work" class="btn btn-outline magnetic-element">
                                 View Work
                             </a>
                         </div>
@@ -284,7 +342,7 @@
                         <li>Wireframing & Prototyping</li>
                         <li>Design Systems</li>
                     </ul>
-                    <a href="#contact" class="service-link">Start Project <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="service-link magnetic-element">Start Project <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card" data-animate="fade-up" data-delay="1">
@@ -301,7 +359,7 @@
                         <li>Node.js / Python / Go</li>
                         <li>API Design & Integration</li>
                     </ul>
-                    <a href="#contact" class="service-link">Start Project <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="service-link magnetic-element">Start Project <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card" data-animate="fade-up" data-delay="2">
@@ -318,7 +376,7 @@
                         <li>Native iOS & Android</li>
                         <li>App Store Optimization</li>
                     </ul>
-                    <a href="#contact" class="service-link">Start Project <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="service-link magnetic-element">Start Project <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card" data-animate="fade-up" data-delay="3">
@@ -335,7 +393,7 @@
                         <li>Conversion Optimization</li>
                         <li>Analytics & Reporting</li>
                     </ul>
-                    <a href="#contact" class="service-link">Start Project <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="service-link magnetic-element">Start Project <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -350,7 +408,7 @@
             </div>
             <div class="work-grid">
                 <div class="work-item large" data-animate="fade-up">
-                    <a href="#" class="work-link">
+                    <a href="#" class="work-link magnetic-element">
                         <div class="work-image">
                             <div class="work-img-placeholder">
                                 <i class="fas fa-laptop-code"></i>
@@ -374,7 +432,7 @@
                 </div>
 
                 <div class="work-item" data-animate="fade-up" data-delay="1">
-                    <a href="#" class="work-link">
+                    <a href="#" class="work-link magnetic-element">
                         <div class="work-image">
                             <div class="work-img-placeholder">
                                 <i class="fas fa-chart-pie"></i>
@@ -398,7 +456,7 @@
                 </div>
 
                 <div class="work-item" data-animate="fade-up" data-delay="2">
-                    <a href="#" class="work-link">
+                    <a href="#" class="work-link magnetic-element">
                         <div class="work-image">
                             <div class="work-img-placeholder">
                                 <i class="fas fa-palette"></i>
@@ -422,7 +480,7 @@
                 </div>
 
                 <div class="work-item large" data-animate="fade-up" data-delay="1">
-                    <a href="#" class="work-link">
+                    <a href="#" class="work-link magnetic-element">
                         <div class="work-image">
                             <div class="work-img-placeholder">
                                 <i class="fas fa-mobile-screen"></i>
@@ -468,10 +526,10 @@
                 </div>
             </div>
             <div class="gallery-grid">
-                <!-- My Students -->
+                <!-- My Students (11 images) -->
                 <div class="gallery-item tall" data-category="ebt" data-animate="fade-up">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_141609434~2.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_141609434~2.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -479,7 +537,7 @@
                 </div>
                 <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="1">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_141609434~22.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_141609434~22.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -487,7 +545,7 @@
                 </div>
                 <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="2">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_141609434~23.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_141609434~23.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -495,7 +553,7 @@
                 </div>
                 <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="1">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_141609434~24.jpg.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_141609434~24.jpg.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -503,7 +561,7 @@
                 </div>
                 <div class="gallery-item tall" data-category="ebt" data-animate="fade-up" data-delay="2">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_141609434~25.jpg.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_141609434~25.jpg.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -511,7 +569,7 @@
                 </div>
                 <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="3">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_141634232.MP~2.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_141634232.MP~2.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -519,7 +577,7 @@
                 </div>
                 <div class="gallery-item" data-category="ebt" data-animate="fade-up">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_143049985.MP~2.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_143049985.MP~2.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -527,7 +585,7 @@
                 </div>
                 <div class="gallery-item tall" data-category="ebt" data-animate="fade-up" data-delay="1">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_143339631.NIGHT~2.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_143339631.NIGHT~2.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -535,7 +593,7 @@
                 </div>
                 <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="2">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_143356808.NIGHT~2.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_143356808.NIGHT~2.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -543,7 +601,7 @@
                 </div>
                 <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="3">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_143518720.NIGHT~2.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_143518720.NIGHT~2.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -551,17 +609,17 @@
                 </div>
                 <div class="gallery-item" data-category="ebt" data-animate="fade-up" data-delay="2">
                     <div class="gallery-img bw">
-                        <img src="images/PXL_20260908_143549891.NIGHT~2.jpg" alt="Student Training Session">
+                        <img src="images/PXL_20260908_143549891.NIGHT~2.jpg" alt="Student Training Session" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
                     </div>
                 </div>
 
-                <!-- My Clients -->
+                <!-- My Clients (11 images) -->
                 <div class="gallery-item" data-category="fdl" data-animate="fade-up">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0002~2.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0002~2.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -569,7 +627,7 @@
                 </div>
                 <div class="gallery-item tall" data-category="fdl" data-animate="fade-up" data-delay="1">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0016~2.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0016~2.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -577,7 +635,7 @@
                 </div>
                 <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="2">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0019~2.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0019~2.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -585,7 +643,7 @@
                 </div>
                 <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="1">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0025~2.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0025~2.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -593,7 +651,7 @@
                 </div>
                 <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="2">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0030~2.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0030~2.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -601,7 +659,7 @@
                 </div>
                 <div class="gallery-item tall" data-category="fdl" data-animate="fade-up" data-delay="3">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0039~2.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0039~2.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -609,7 +667,7 @@
                 </div>
                 <div class="gallery-item" data-category="fdl" data-animate="fade-up">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0052~3.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0052~3.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -617,7 +675,7 @@
                 </div>
                 <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="1">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0055.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0055.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -625,7 +683,7 @@
                 </div>
                 <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="2">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0056~2.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0056~2.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -633,7 +691,7 @@
                 </div>
                 <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="3">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0077~3.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0077~3.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -641,7 +699,7 @@
                 </div>
                 <div class="gallery-item tall" data-category="fdl" data-animate="fade-up" data-delay="2">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0094~2.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0094~2.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -649,7 +707,7 @@
                 </div>
                 <div class="gallery-item" data-category="fdl" data-animate="fade-up" data-delay="3">
                     <div class="gallery-img bw">
-                        <img src="images/IMG-20260629-WA0099~2.jpg" alt="Client Project">
+                        <img src="images/IMG-20260629-WA0099~2.jpg" alt="Client Project" loading="lazy">
                         <div class="gallery-overlay">
                             <span class="gallery-icon"><i class="fas fa-expand"></i></span>
                         </div>
@@ -745,13 +803,13 @@
                 </div>
             </div>
             <div class="testimonial-nav">
-                <button class="test-nav-btn prev"><i class="fas fa-arrow-left"></i></button>
+                <button class="test-nav-btn prev magnetic-element"><i class="fas fa-arrow-left"></i></button>
                 <div class="test-dots">
                     <span class="test-dot active" data-slide="0"></span>
                     <span class="test-dot" data-slide="1"></span>
                     <span class="test-dot" data-slide="2"></span>
                 </div>
-                <button class="test-nav-btn next"><i class="fas fa-arrow-right"></i></button>
+                <button class="test-nav-btn next magnetic-element"><i class="fas fa-arrow-right"></i></button>
             </div>
         </div>
     </section>
@@ -764,7 +822,7 @@
                     <h2>Have a project in mind?</h2>
                     <p>Let's work together to create something extraordinary.</p>
                 </div>
-                <a href="#contact" class="btn btn-white">
+                <a href="#contact" class="btn btn-white magnetic-element">
                     Start a Project <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
@@ -786,14 +844,14 @@
                             Let's discuss how we can bring your vision to life.
                         </p>
                         <div class="contact-info">
-                            <a href="mailto:hello@abdurdaily.dev" class="contact-item">
+                            <a href="mailto:abdurdiary@gmail.com" class="contact-item magnetic-element">
                                 <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                                 <div>
                                     <span class="contact-label">Email</span>
-                                    <span class="contact-value">hello@abdurdaily.dev</span>
+                                    <span class="contact-value">abdurdiary@gmail.com</span>
                                 </div>
                             </a>
-                            <a href="tel:+1234567890" class="contact-item">
+                            <a href="tel:+1234567890" class="contact-item magnetic-element">
                                 <div class="contact-icon"><i class="fas fa-phone"></i></div>
                                 <div>
                                     <span class="contact-label">Phone</span>
@@ -804,15 +862,14 @@
                                 <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
                                 <div>
                                     <span class="contact-label">Location</span>
-                                    <span class="contact-value">San Francisco, CA</span>
+                                    <span class="contact-value">Chawkbazar, Chittagong, Bangladesh</span>
                                 </div>
                             </div>
                         </div>
                         <div class="contact-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/abdurdaily" class="social-link magnetic-element" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/abdurDaily" class="social-link magnetic-element" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.facebook.com/abdurDaily" class="social-link magnetic-element" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
@@ -838,18 +895,6 @@
                                         <input type="tel" class="form-control" placeholder="+1 (234) 567-890">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Budget</label>
-                                        <select class="form-control">
-                                            <option value="">Select range</option>
-                                            <option>$5K - $10K</option>
-                                            <option>$10K - $25K</option>
-                                            <option>$25K - $50K</option>
-                                            <option>$50K+</option>
-                                        </select>
-                                    </div>
-                                </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Project Details *</label>
@@ -857,7 +902,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-black btn-full">
+                                    <button type="submit" class="btn btn-black btn-full magnetic-element">
                                         Send Message <i class="fas fa-paper-plane ms-2"></i>
                                     </button>
                                 </div>
@@ -882,10 +927,9 @@
                     <a href="#" class="footer-logo">abdurDaily<span class="brand-dot">.</span></a>
                     <p>Crafting digital experiences that drive results.</p>
                     <div class="footer-social">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-dribbble"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/abdurdaily" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/abdurDaily" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/abdurDaily" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -910,9 +954,9 @@
                     <div class="footer-col">
                         <h5>Contact</h5>
                         <ul>
-                            <li><a href="mailto:hello@abdurdaily.dev">hello@abdurdaily.dev</a></li>
+                            <li><a href="mailto:abdurdiary@gmail.com">abdurdiary@gmail.com</a></li>
                             <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
-                            <li><span>San Francisco, CA</span></li>
+                            <li><span>Chawkbazar, Chittagong</span></li>
                         </ul>
                     </div>
                 </div>
@@ -925,7 +969,7 @@
     </footer>
 
     <!-- Back to Top -->
-    <a href="#home" class="back-to-top" id="backToTop">
+    <a href="#home" class="back-to-top magnetic-element" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
 

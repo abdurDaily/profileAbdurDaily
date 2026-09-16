@@ -1,21 +1,95 @@
 // ========================================
-// PRELOADER
+// VIDEO INTRO
 // ========================================
-window.addEventListener('load', () => {
+const videoIntro = document.getElementById('videoIntro');
+const introSkip = document.getElementById('introSkip');
+const introCounter = document.getElementById('introCounter');
+const introLoaderBar = document.querySelector('.intro-loader-bar');
+let introProgress = 0;
+let introInterval;
+let introSkipped = false;
+let introStarted = false;
+
+function startIntro() {
+    if (introStarted) return;
+    introStarted = true;
+    document.body.style.overflow = 'hidden';
+    introProgress = 0;
+    introInterval = setInterval(() => {
+        introProgress += 1;
+        if (introCounter) introCounter.textContent = introProgress;
+        if (introLoaderBar) introLoaderBar.style.width = introProgress + '%';
+        if (introProgress >= 100) {
+            clearInterval(introInterval);
+            endIntro();
+        }
+    }, 30);
+}
+
+function endIntro() {
+    if (introSkipped) return;
+    introSkipped = true;
+    clearInterval(introInterval);
+    videoIntro.classList.add('hidden');
+    document.body.style.overflow = '';
+    document.body.classList.add('loaded');
     setTimeout(() => {
-        const preloader = document.getElementById('preloader');
-        preloader.classList.add('hidden');
+        videoIntro.style.display = 'none';
+        showNavbar();
+        initAfterIntro();
+    }, 800);
+}
+
+if (introSkip) {
+    introSkip.addEventListener('click', () => {
+        if (introSkipped) return;
+        introSkipped = true;
+        clearInterval(introInterval);
+        videoIntro.classList.add('hidden');
+        document.body.style.overflow = '';
         document.body.classList.add('loaded');
-    }, 1800);
+        setTimeout(() => {
+            videoIntro.style.display = 'none';
+            showNavbar();
+            initAfterIntro();
+        }, 800);
+    });
+}
+
+function showNavbar() {
+    const navbar = document.getElementById('mainNav');
+    if (navbar) {
+        setTimeout(() => navbar.classList.add('nav-visible'), 100);
+    }
+}
+
+// Start intro on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    startIntro();
+});
+
+// Also start on load as fallback
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.remove();
+    }
+    if (!introSkipped) {
+        startIntro();
+    }
 });
 
 // ========================================
-// CURSOR FOLLOWER
+// CURSOR FOLLOWER (Enhanced)
 // ========================================
 const cursor = document.querySelector('.cursor-follower');
 const cursorDot = document.querySelector('.cursor-dot');
+const cursorTrail = document.querySelector('.cursor-trail');
+const cursorParticlesContainer = document.getElementById('cursorParticles');
 let mouseX = 0, mouseY = 0;
 let cursorX = 0, cursorY = 0;
+let trailX = 0, trailY = 0;
+let lastParticleTime = 0;
 
 if (window.matchMedia('(hover: hover)').matches) {
     document.addEventListener('mousemove', (e) => {
@@ -25,24 +99,128 @@ if (window.matchMedia('(hover: hover)').matches) {
             cursorDot.style.left = mouseX + 'px';
             cursorDot.style.top = mouseY + 'px';
         }
+
+        // Spawn cursor particles
+        const now = Date.now();
+        if (now - lastParticleTime > 50 && cursorParticlesContainer) {
+            lastParticleTime = now;
+            spawnCursorParticle(mouseX, mouseY);
+        }
     });
 
     const animateCursor = () => {
-        cursorX += (mouseX - cursorX) * 0.15;
-        cursorY += (mouseY - cursorY) * 0.15;
+        cursorX += (mouseX - cursorX) * 0.12;
+        cursorY += (mouseY - cursorY) * 0.12;
+        trailX += (mouseX - trailX) * 0.06;
+        trailY += (mouseY - trailY) * 0.06;
+
         if (cursor) {
             cursor.style.left = cursorX + 'px';
             cursor.style.top = cursorY + 'px';
+        }
+        if (cursorTrail) {
+            cursorTrail.style.left = trailX + 'px';
+            cursorTrail.style.top = trailY + 'px';
         }
         requestAnimationFrame(animateCursor);
     };
     animateCursor();
 
+    // Magnetic elements
+    document.querySelectorAll('.magnetic-element').forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        });
+
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = '';
+        });
+    });
+
+    // Cursor hover effects
     document.querySelectorAll('a, button, .work-link, .social-link, .service-card, .filter-pill').forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+            cursorTrail.style.opacity = '0.5';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+            cursorTrail.style.opacity = '0';
+        });
+    });
+
+    // Cursor click effect
+    document.addEventListener('mousedown', () => {
+        cursor.classList.add('click');
+        if (cursorDot) cursorDot.style.transform = 'translate(-50%, -50%) scale(0.7)';
+    });
+    document.addEventListener('mouseup', () => {
+        cursor.classList.remove('click');
+        if (cursorDot) cursorDot.style.transform = '';
     });
 }
+
+function spawnCursorParticle(x, y) {
+    if (!cursorParticlesContainer) return;
+    const particle = document.createElement('div');
+    particle.className = 'cursor-particle';
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+    cursorParticlesContainer.appendChild(particle);
+
+    const size = Math.random() * 4 + 2;
+    const angle = Math.random() * Math.PI * 2;
+    const distance = Math.random() * 30 + 10;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance;
+
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+
+    particle.animate([
+        { transform: 'translate(-50%, -50%) scale(1)', opacity: 0.4 },
+        { transform: `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(0)`, opacity: 0 }
+    ], {
+        duration: 600,
+        easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+    }).onfinish = () => particle.remove();
+}
+
+// ========================================
+// HERO PARTICLES
+// ========================================
+function createHeroParticles() {
+    const container = document.getElementById('heroParticles');
+    if (!container) return;
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'hero-particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+        particle.style.animationDelay = (Math.random() * 10) + 's';
+        particle.style.width = (Math.random() * 3 + 2) + 'px';
+        particle.style.height = particle.style.width;
+        container.appendChild(particle);
+    }
+}
+createHeroParticles();
+
+// ========================================
+// SCROLL PROGRESS
+// ========================================
+const scrollProgress = document.getElementById('scrollProgress');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    if (scrollProgress) {
+        scrollProgress.style.width = progress + '%';
+    }
+});
 
 // ========================================
 // NAVIGATION
@@ -101,29 +279,40 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 });
 
 // ========================================
-// COUNTER ANIMATION
+// COUNTER ANIMATION (Bottom to Top)
 // ========================================
 const counters = document.querySelectorAll('.stat-num');
+const statItems = document.querySelectorAll('.stat');
 let counterAnimated = false;
 
 const animateCounters = () => {
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-
-        const update = () => {
-            current += step;
-            if (current < target) {
-                counter.textContent = Math.floor(current);
-                requestAnimationFrame(update);
-            } else {
-                counter.textContent = target;
-            }
-        };
-        update();
+    // Stagger the slide-in for each stat
+    statItems.forEach((stat, index) => {
+        setTimeout(() => {
+            stat.classList.add('animate-in');
+        }, index * 200);
     });
+
+    // Start counting after slide-in begins
+    setTimeout(() => {
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const update = () => {
+                current += step;
+                if (current < target) {
+                    counter.textContent = Math.floor(current);
+                    requestAnimationFrame(update);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+            update();
+        });
+    }, 300);
 };
 
 const heroObserver = new IntersectionObserver((entries) => {
@@ -244,7 +433,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ========================================
-// SCROLL ANIMATIONS
+// SCROLL ANIMATIONS (Enhanced)
 // ========================================
 const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -261,9 +450,58 @@ const fadeObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-document.querySelectorAll('[data-animate]').forEach(el => {
-    fadeObserver.observe(el);
-});
+function initScrollAnimations() {
+    document.querySelectorAll('[data-animate]').forEach(el => {
+        fadeObserver.observe(el);
+    });
+}
+
+// ========================================
+// SECTION REVEAL ON SCROLL
+// ========================================
+const sectionRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+        }
+    });
+}, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+
+function initSectionReveals() {
+    document.querySelectorAll('.section').forEach(section => {
+        section.classList.add('section-reveal');
+        sectionRevealObserver.observe(section);
+    });
+    // Fallback: reveal all sections after 3s in case observer doesn't fire
+    setTimeout(() => {
+        document.querySelectorAll('.section-reveal').forEach(section => {
+            section.classList.add('revealed');
+        });
+    }, 3000);
+}
+
+// ========================================
+// PARALLAX EFFECT
+// ========================================
+function initParallax() {
+    const heroBgGrid = document.querySelector('.hero-bg-grid');
+    const heroVisual = document.querySelector('.hero-visual');
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        if (heroBgGrid) {
+            heroBgGrid.style.transform = `translateY(${scrollY * 0.3}px)`;
+        }
+
+        if (heroVisual) {
+            const rect = heroVisual.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                heroVisual.style.transform = `translateY(${scrollY * 0.08}px)`;
+            }
+        }
+    });
+}
 
 // ========================================
 // GALLERY LIGHTBOX
@@ -384,3 +622,19 @@ window.addEventListener('resize', () => {
     const activePill = document.querySelector('.filter-pill.active');
     if (activePill) movePillBg(activePill);
 });
+
+// ========================================
+// INITIALIZE AFTER INTRO
+// ========================================
+function initAfterIntro() {
+    initScrollAnimations();
+    initSectionReveals();
+    initParallax();
+}
+
+// Fallback: if no video intro, init immediately
+if (!videoIntro) {
+    document.body.classList.add('loaded');
+    showNavbar();
+    initAfterIntro();
+}
